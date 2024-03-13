@@ -1,0 +1,46 @@
+.main {
+  padding: 4rem 6rem;
+}
+
+.title {
+  color: white;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  margin-bottom: 2rem;
+}
+
+.detailList {
+  padding-left: 1rem;
+}
+.detailList li {
+  /* color: var(--textCls); */
+  margin-bottom: 1rem;
+  letter-spacing: 0.4px;
+  color: black;
+  font-weight: 500s;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 756px) {
+  .detailList,
+  .detailListl li,
+  .title,
+  .main {
+    padding: 0;
+    margin: 0;
+    display: block;
+    gap: 0;
+  }
+
+  .title {
+    padding: 1rem;
+  }
+  .detailList {
+    padding: 1rem;
+    list-style: none;
+  }
+}

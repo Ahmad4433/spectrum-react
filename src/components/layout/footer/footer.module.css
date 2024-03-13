@@ -1,0 +1,17 @@
+
+
+.main{
+    /* background-color: var(--bodyBgClr2); */
+    background-color: black;
+    color: var(--textCls);
+}
+.bar{
+    width: 100%;
+    height: 2px;
+    /* background-color: rgb(92, 92, 92); */
+}
+
+.copy{
+    text-align:center;
+margin-top: 1rem;
+}

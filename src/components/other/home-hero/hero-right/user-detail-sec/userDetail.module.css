@@ -1,0 +1,144 @@
+.main {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.viewSec {
+  position: relative;
+}
+
+.topBar {
+  width: 80px;
+  background-color: var(--imgBg);
+  height: 4px;
+  display: block;
+}
+.leftBar {
+  height: 110px;
+  width: 4px;
+  background-color: var(--imgBg);
+  display: block;
+}
+
+.potrateParent {
+  padding: 1.4rem;
+  position: absolute;
+  inset: 0;
+}
+.portateBg {
+  background-color: var(--imgBg);
+  height: 200px;
+  width: 180px;
+  border-radius: 12px;
+}
+
+.imageBg {
+  height: 240px;
+  width: 220px;
+  padding: 1.4rem;
+  position: absolute;
+  inset: 0;
+  top: -0.6rem;
+  left: -0.6rem;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+}
+
+.tenets {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 4rem;
+}
+
+.tenets button {
+  border: none;
+  outline: none;
+  background-color: var(--imgBg);
+  width: 200px;
+  margin-bottom: 1rem;
+  padding: 0.9rem;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  &:hover {
+    cursor: pointer;
+  }
+}
+@media (max-width: 756px) {
+  .main {
+    display: block;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+
+  .potrateParent {
+    position: static;
+  }
+  .imageBg {
+    position: static;
+  }
+
+  .viewSec {
+    display: block;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .bars {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 24%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+  }
+
+  .portrateChild {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .imageBg {
+    position: absolute;
+    top: 45%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .tenets {
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    display: block;
+    padding: 1rem;
+
+   
+  }
+  .tenets button{
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: 6px;
+  }
+}

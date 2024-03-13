@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+  --bodyBgClr1:  white;
+  /* --bodyBgClr1:  #006977; */
+  --bodyBgClr2: #EAFCFF;
+  --imgBg:#00E0FF;
+  --borderClr:#4C96A1;
+  --pBgClr:#00525E;
+  --textCls:#EAFCFF;
+  --hClr:white
+
+}
+
+
+body{
+    font-family: sans-serif;
+
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+

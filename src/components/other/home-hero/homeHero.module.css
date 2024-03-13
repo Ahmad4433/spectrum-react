@@ -1,0 +1,15 @@
+
+.main{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+    background-color: var(--bodyBgClr1);
+    gap: 2rem;
+}
+@media(max-width:756px){
+    .main{
+        grid-template-columns: 1fr;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+    }
+}

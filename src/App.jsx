@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 
 import Home from "./pages/home/Home";
 const App = () => {
 
+  useEffect(()=>{
+
+    window.scroll(0,0)
+
+  },[])
 
 
   return (

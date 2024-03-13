@@ -2,7 +2,7 @@ import { uiActions } from "../slices/ui-slice";
 
 const httpAction = (data) => async (dispatch) => {
   dispatch(uiActions.setError(null));
-  dispatch(uiActions.startLoading(false));
+  dispatch(uiActions.startLoading(true));
 
   try {
     const response = await fetch(data.url, {

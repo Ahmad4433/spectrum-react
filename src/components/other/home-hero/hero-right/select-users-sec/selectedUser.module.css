@@ -119,6 +119,7 @@
     padding: 0;
     margin: 0;
     /* padding: 1rem; */
+    padding: 1rem 0;
   }
   .uDetail {
     width: calc(50% - 1rem);

@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import style from "./selectedUser.module.css";
 
 import apis from "../../../../../store/utils/apis";
-import {  useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import httpAction from "../../../../../store/action/httpAction";
+import { dragActions } from "../../../../../store/slices/drag-slice";
 
 const SelectedUsers = () => {
   const [data, setData] = useState();
   const dispatch = useDispatch();
-  
+ 
+
 
   const list2 = apis();
 
@@ -25,12 +27,16 @@ const SelectedUsers = () => {
     getPersonalities();
   }, []);
 
+
+
+
+
+
   return (
-    <div className={style.main}>
-    
-      <div className={style.list}>
+    <div  id="dropzone" className={style.main}>
+      <div   className={style.list}>
         {data &&
-          data.slice(0, 6).map((li, index) => {
+          data.slice(0, 0).map((li, index) => {
             return (
               <div key={index} className={style.uDetail}>
                 <img src={li.image} className={style.img} alt={index} />

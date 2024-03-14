@@ -3,6 +3,10 @@
   background-color: var(--bodyBgClr2);
   /* padding: 2rem 8rem; */
   padding: 1rem;
+  
+  min-height: 400px;
+  border-radius: 8px;
+  border: 1px dashed #ccc;
 }
 
 .banner {
@@ -67,6 +71,12 @@
   max-width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.dropzone{
+  min-height: 200px;
+  width: 100%;
+  background-color: lightblue;
 }
 
 @media (max-width: 756px) {

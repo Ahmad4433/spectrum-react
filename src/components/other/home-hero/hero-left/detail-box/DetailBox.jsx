@@ -27,11 +27,10 @@ const DetailBox = () => {
   return (
     <div className={style.main}>
       <p className={style.box}>
-        It is a long established fact that a reader will be distracted by the
-        readable content of a page when looking at its layout. The point of
-        using Lorem Ipsum is that it has a more-or-less normal distribution of
-        letters, as opposed to using 'Content here, content here', making it
-        look like readable English
+      The first step in creating your directive is to choose a core tenet that resonates with your personal 
+values and leadership philosophy. This could be Emotional Intelligence, Ethical Decision-Making, 
+Inclusivity and Diversity, or Social Responsibility. This tenet will serve as the foundation of your 
+leadership style, influencing how you interpret and apply the various leadership styles.
       </p>
 
       <div className={style.list}>

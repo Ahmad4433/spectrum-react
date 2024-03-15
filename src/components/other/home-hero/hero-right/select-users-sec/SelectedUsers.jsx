@@ -5,12 +5,18 @@ import apis from "../../../../../store/utils/apis";
 import { useDispatch, useSelector } from "react-redux";
 import httpAction from "../../../../../store/action/httpAction";
 import { dragActions } from "../../../../../store/slices/drag-slice";
+import { Droppable } from "react-beautiful-dnd";
+
+import { MdOutlineDeleteOutline } from "react-icons/md";
 
 const SelectedUsers = () => {
   const [data, setData] = useState();
-  const dispatch = useDispatch();
- 
+  const [selected, setSelected] = useState();
+  const [dragged, setDragged] = useState([]);
 
+  const dispatch = useDispatch();
+
+  const itemsId = useSelector((state) => state.drag.itemId);
 
   const list2 = apis();
 
@@ -27,26 +33,97 @@ const SelectedUsers = () => {
     getPersonalities();
   }, []);
 
+  const getUserPersoData = {
+    url: list2.userPersonalityList,
+    method: "POST",
+    body: { userId: "65f48b8d1eeb98db5a9467b1" },
+  };
 
+  const getUserPerso = async () => {
+    const result = await dispatch(httpAction(getUserPersoData));
+    setSelected(result?.list);
 
+    setDragged(result?.list);
+  };
 
+  useEffect(() => {
+    getUserPerso();
+  }, []);
 
+  const addUserPersonality = async (id) => {
+    if (dragged && dragged.length >= 6) {
+      return;
+    }
+
+    const addPersonalityData = {
+      url: list2.addUserPersonality,
+      method: "POST",
+      body: { userId: "65f48b8d1eeb98db5a9467b1", perId: id },
+    };
+
+    const result = await dispatch(httpAction(addPersonalityData));
+    console.log(result);
+  };
+
+  useEffect(() => {
+    if (dragged && dragged.length >= 6) {
+      return;
+    }
+    if (itemsId) {
+      const findedItem = data?.find((li) => li.id === itemsId);
+      setDragged((prevDragged) => [...prevDragged, findedItem]);
+      addUserPersonality(itemsId);
+    }
+  }, [itemsId]);
+
+  const deletePerHandler = async (id) => {
+    const deleteData = {
+      url: list2.deleteUserPersonality,
+      method: "POST",
+      body: { perId: id },
+    };
+
+   await dispatch(httpAction(deleteData));
+   
+
+    setDragged((prevDrag) => {
+      return prevDrag.filter((item) => item.id !== id);
+    });
+    dispatch(dragActions.setOndeleteItem(id))
+  };
 
   return (
-    <div  id="dropzone" className={style.main}>
-      <div   className={style.list}>
-        {data &&
-          data.slice(0, 0).map((li, index) => {
-            return (
-              <div key={index} className={style.uDetail}>
-                <img src={li.image} className={style.img} alt={index} />
-                <span className={style.name}>{li.title}</span>
-                <span className={style.detail}>{li.detail}</span>
-              </div>
-            );
-          })}
-      </div>
-    </div>
+    <Droppable droppableId="someid">
+      {(provided) => (
+        <div
+          ref={provided.innerRef}
+          {...provided.droppableProps}
+          id="dropzone"
+          className={style.main}
+        >
+          <div className={style.list}>
+            {dragged &&
+              dragged.map((li, index) => {
+                return (
+                  <div key={index} className={style.uDetail}>
+                    <span className={style.delete}>
+                      {
+                        <MdOutlineDeleteOutline
+                          onClick={() => deletePerHandler(li.id)}
+                          className={style.deleteIcon}
+                        />
+                      }
+                    </span>
+                    <img src={li?.image} className={style.img} alt={index} />
+                    <span className={style.name}>{li?.title}</span>
+                    <span className={style.detail}>{li?.detail}</span>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      )}
+    </Droppable>
   );
 };
 

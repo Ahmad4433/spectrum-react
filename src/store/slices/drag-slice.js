@@ -5,7 +5,10 @@ const drageSlice = createSlice({
   initialState: {
     isDrag: false,
     id:null,
-    items:[]
+    items:[],
+    itemId:null,
+    delteItemId:null
+
   },
   reducers: {
     setStatus(state, action) {
@@ -17,6 +20,16 @@ const drageSlice = createSlice({
     setItems(state,action){
         console.log(action.payload)
         state.items.push(action.payload)
+    },
+    setItemId(state,action){
+
+      state.itemId = action.payload
+
+    },
+    setOndeleteItem(state,action){
+    
+      state.delteItemId = action.payload
+
     }
 
   },

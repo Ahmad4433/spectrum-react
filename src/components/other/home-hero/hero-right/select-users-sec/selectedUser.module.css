@@ -114,6 +114,7 @@
   }
   .uDetail {
     width: calc(50% - 1rem);
+    
   }
 
   .banner {
@@ -130,5 +131,8 @@
 
   .img {
     width: 40px;
+  }
+  .list{
+    padding: 0 1rem;
   }
 }

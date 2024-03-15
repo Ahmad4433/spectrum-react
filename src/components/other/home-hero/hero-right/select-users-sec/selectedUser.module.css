@@ -49,6 +49,7 @@
   border-radius: 10px;
   width: calc(50% - 1rem);
   cursor: pointer;
+  position: relative;
 }
 
 .detail {
@@ -85,8 +86,9 @@
 .delete{
   opacity: 0;
   display: block;
-  width: 100%;
-  text-align: right;
+ position: absolute;
+ right: 1rem;
+ top: 10px;
   
 }
 

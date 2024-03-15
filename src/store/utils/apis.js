@@ -5,10 +5,10 @@ const list = {
 
 getPersonalities:`${baseUrl}personalities/list`,
 getTenetsList:`${baseUrl}tenet/list`,
-addUserPersonality:`${local}user/personality/add`,
-userPersonalityList:`${local}user/personality/list`,
-userTotalPersonalities:`${local}user/total/personalities`,
-deleteUserPersonality:`${local}user/personality/delete`,
+addUserPersonality:`${baseUrl}user/personality/add`,
+userPersonalityList:`${baseUrl}user/personality/list`,
+userTotalPersonalities:`${baseUrl}user/total/personalities`,
+deleteUserPersonality:`${baseUrl}user/personality/delete`,
 
 
 }

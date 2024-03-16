@@ -13,11 +13,28 @@
 }
 
 
+.listParent{
+  border: 1px dashed #ccc;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 200px;
+}
+
+
+.dragTitle{
+  color: #ccc;
+  font-style: italic;
+
+}
+
+
 .list{
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
+ 
+
   /* justify-content: center; */
 }
 @media(max-width:756px){
@@ -56,7 +73,7 @@ justify-content: center;
   color: #000000;
   letter-spacing: 0.4px;
   font-size: 0.8rem;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 

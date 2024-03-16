@@ -66,19 +66,17 @@ const UserDetail = () => {
       body: { tenId: id },
       url: apiList.deleteUserTenet,
     };
-    dispatch(tenetActions.setOndeleteId(id))
+    dispatch(tenetActions.setOndeleteId(id));
     await dispatch(httpAction(deleteTentData));
 
     setItems((prevItems) => {
       return prevItems.filter((item) => item.id !== id);
     });
-
-    
   };
 
   return (
     <div className={style.main}>
-      <div>
+      <div className={style.left} >
         <div className={style.viewSec}>
           <div className={style.bars}>
             <span className={style.topBar}></span>
@@ -100,27 +98,28 @@ const UserDetail = () => {
             {...provided.droppableProps}
           >
             {items &&
-              items.slice().reverse().map((ten, index) => {
-
-           
+              items
+                .slice()
+                .reverse()
+                .map((ten, index) => {
                   return (
-                    <div className={style.tenet} key={index}>
-                      <img src={ten.image} className={style.telImage} />
-                      <p>{ten.title}</p>
-  
-                      <span>
-                        <IoIosRemoveCircleOutline
-                          onClick={() => deleteTeneHandler(ten.id)}
-                          className={style.removeIcon}
-                        />
-                      </span>
+                    <div>
+                      <div className={style.tenet} key={index}>
+                        <img src={ten.image} className={style.telImage} />
+                        <p>{ten.title}</p>
+
+                        <span>
+                          <IoIosRemoveCircleOutline
+                            onClick={() => deleteTeneHandler(ten.id)}
+                            className={style.removeIcon}
+                          />
+                        </span>
+                      </div>
                     </div>
                   );
-               
-
-             
-              })}
+                })}
             {provided.placeholder}
+            <div className={style.tenetDummy} >Drop Here</div>
           </div>
         )}
       </Droppable>

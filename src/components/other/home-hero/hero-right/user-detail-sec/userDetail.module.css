@@ -2,10 +2,19 @@
   display: flex;
   gap: 2rem;
   margin-top: 2rem;
+  
+}
+
+@media(min-width:756px){
+  .left{
+    width: 35%;
+  
+  }
 }
 
 .viewSec {
   position: relative;
+
 }
 
 .topBar {
@@ -51,17 +60,33 @@
   border-radius: 12px;
 }
 
-.tenets {
-  flex: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  flex-direction: column;
-  padding-right: 4rem;
-  min-height: 280px;
+@media(min-width:756px){
 
-
+    .tenets::-webkit-scrollbar{
+      display: none;
+    }
 }
+
+.tenets {
+
+    flex: 1;
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 4rem;
+    /* max-height: 280px; */
+  overflow-y: scroll;
+ flex: 1;
+  min-height: 280px;
+ border: 1px solid #ccc;
+ padding: 1rem;
+ margin-bottom: 1rem;
+ border-radius: 12px;
+ margin-right: 1rem;
+
+
+  }
 
 /* .tenets button {
   border: none;
@@ -80,17 +105,37 @@
 } */
 
 .tenet{
+  
   display: flex;
   justify-content: space-between;
-  border: 1px solid #5e5e5e;
+  border: 1px solid #ccc;
   padding: 1rem;
   border-radius: 12px;
   align-items: center;
   margin-bottom: 1rem;
- width: 300px;
+ /* width: 300px; */
+ width: 100%;
+ cursor: pointer;
+ &:hover{
+  border-color: rgb(52, 167, 206);
+  transform: scale(1.04);
+  transition: transform 0.4s ease;
+ }
 
 }
 
+.tenetDummy{
+  width: 100%;
+  border: 1px dashed #ccc;
+  padding: 1.5rem;
+  border-radius: 12px;
+
+  text-align: center;
+  font-style: italic;
+  color: #ccc;
+ 
+  margin-bottom: 1rem;
+}
 .removeIcon{
   font-size: 2rem;
   color: #7e7e7e;
@@ -181,5 +226,9 @@
   }
   .tenet{
     margin: 1rem auto;
+  }
+  .tenetDummy{
+    margin: 0 auto;
+    margin-bottom: 1rem;
   }
 }

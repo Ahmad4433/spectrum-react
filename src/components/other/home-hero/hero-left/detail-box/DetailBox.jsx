@@ -71,7 +71,8 @@ const DetailBox = () => {
 
       <Droppable droppableId="tenets">
         {(provided) => (
-          <div ref={provided.innerRef} {...provided.droppableProps}>
+          <div className={style.listParent} ref={provided.innerRef} {...provided.droppableProps}>
+            <p className={style.dragTitle} >Drag Tenet from here</p>
             <div className={style.list}>
               {data &&
                 data.map((li, index) => {
@@ -101,6 +102,7 @@ const DetailBox = () => {
                     </Draggable>
                   );
                 })}
+                
             </div>
           </div>
         )}

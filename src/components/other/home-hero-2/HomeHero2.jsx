@@ -11,11 +11,17 @@ const HomeHero2 = () => {
   const dispatch = useDispatch();
   const itemId = useSelector((state) => state.drag.itemId);
   const onDeleteItemId = useSelector((state) => state.drag.delteItemId);
+
+
+  // for reodering array
+  const sourceIndex = useSelector(state=>state.drag.sourceIndex)
+  const destIndex = useSelector(state=>state.drag.destinationIndex)
+
   const list2 = apis();
   const data2 = {
     url: list2.userTotalPersonalities,
     method: "POST",
-    body: { userId: "65f48b8d1eeb98db5a9467b1" },
+    body: { userId: list2.userId},
   };
 
   const getPersonalities = async () => {
@@ -30,12 +36,28 @@ const HomeHero2 = () => {
   useEffect(() => {
     if (itemId && data.length > 8) {
       setData((prevData) => {
-        return prevData.filter((data) => data.id != itemId);
+        return prevData.filter((data) => data.id !== itemId);
       });
     }
   }, [itemId]);
 
 
+
+  // useEffect(() => {
+  //   if (sourceIndex !== null && destIndex !== null) {
+  //     // Clone the data array to avoid mutating the state directly
+  //     const newData = [...data];
+      
+  //     // Remove the item from its source index
+  //     const [removed] = newData.splice(sourceIndex, 1);
+      
+  //     // Insert the removed item at the destination index
+  //     newData.splice(destIndex, 0, removed);
+  
+  //     // Update the state with the reordered array
+  //     setData(newData);
+  //   }
+  // }, [sourceIndex, destIndex]);
 
   return (
     <div>
@@ -68,8 +90,8 @@ const HomeHero2 = () => {
                 data.map((li, index) => (
                   <Draggable
                     key={index}
-                    draggableId={`item${li.id}`}
-                    index={li.id}
+                    draggableId={`item-${li.id}`}
+                    index={index}
                    
                   >
                     {(provided) => (

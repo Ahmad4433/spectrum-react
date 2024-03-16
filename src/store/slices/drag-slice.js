@@ -7,7 +7,9 @@ const drageSlice = createSlice({
     id:null,
     items:[],
     itemId:null,
-    delteItemId:null
+    delteItemId:null,
+    sourceIndex:null,
+    destinationIndex:null
 
   },
   reducers: {
@@ -30,6 +32,12 @@ const drageSlice = createSlice({
     
       state.delteItemId = action.payload
 
+    },
+    setSourceIndex(state,action){
+      state.sourceIndex = action.payload
+    },
+    setDestinationIndex(state,action){
+      state.destinationIndex = action.payload
     }
 
   },

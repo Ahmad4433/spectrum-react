@@ -7,10 +7,14 @@ import {useSelector,useDispatch} from 'react-redux'
 import Loading from '../ui/loading/Loading'
 import {DragDropContext} from 'react-beautiful-dnd'
 import {dragActions} from '../../store/slices/drag-slice'
+import { tenetActions } from '../../store/slices/tenets-sllice'
 
 const Layout = () => {
 const dispatch = useDispatch()
 const isLoading = useSelector(state=>state.ui.loading)
+
+
+
 
 const reorderData = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -24,15 +28,31 @@ const reorderData = (list, startIndex, endIndex) => {
 
 const dragEnd = (result)=>{
 
-  const {source,destination} = result
+  const {source,destination,draggableId} = result
+
+
 
   if (!result.destination || source.droppableId === destination.droppableId) {
+    // dispatch(dragActions.setDestinationIndex(destination.index))
+    // dispatch(dragActions.setSourceIndex(source.index))
     return;
   }
  
 
+
     
-  dispatch(dragActions.setItemId(source.index))
+ if(source.droppableId ==='droppable'){
+  const formatedId = draggableId.split('-')[1]
+  dispatch(dragActions.setItemId(formatedId))
+ }
+
+
+if(destination.droppableId ==='tenetArray'){
+ 
+  const formatedId = draggableId.split('-')[1]
+  dispatch(tenetActions.setId(formatedId))
+}
+
 }
 
 
@@ -41,7 +61,7 @@ const dragEnd = (result)=>{
     <DragDropContext onDragEnd={dragEnd} >
     <div className={style.main} >
       
-      {isLoading && <Loading/>}
+      {isLoading &&  <Loading/>}
       <Header/>
     <Outlet/>
     <Footer/>

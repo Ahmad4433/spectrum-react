@@ -58,9 +58,12 @@
   justify-content: center;
   flex-direction: column;
   padding-right: 4rem;
+  min-height: 280px;
+
+
 }
 
-.tenets button {
+/* .tenets button {
   border: none;
   outline: none;
   background-color: var(--imgBg);
@@ -68,11 +71,46 @@
   margin-bottom: 1rem;
   padding: 0.9rem;
   border-radius: 12px;
+  background-color: inherit;
+
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   &:hover {
     cursor: pointer;
   }
+} */
+
+.tenet{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #5e5e5e;
+  padding: 1rem;
+  border-radius: 12px;
+  align-items: center;
+  margin-bottom: 1rem;
+ width: 300px;
+
 }
+
+.removeIcon{
+  font-size: 2rem;
+  color: #7e7e7e;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.tenet:hover .removeIcon{
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.telImage{
+  width: 32px;
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+
+}
+
 @media (max-width: 756px) {
   .main {
     display: block;
@@ -140,5 +178,8 @@
     width: 100%;
     padding: 1rem 0;
     border-radius: 6px;
+  }
+  .tenet{
+    margin: 0 auto;
   }
 }

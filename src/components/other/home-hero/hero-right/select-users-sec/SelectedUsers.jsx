@@ -36,7 +36,7 @@ const SelectedUsers = () => {
   const getUserPersoData = {
     url: list2.userPersonalityList,
     method: "POST",
-    body: { userId: "65f48b8d1eeb98db5a9467b1" },
+    body: { userId: list2.userId},
   };
 
   const getUserPerso = async () => {
@@ -58,11 +58,10 @@ const SelectedUsers = () => {
     const addPersonalityData = {
       url: list2.addUserPersonality,
       method: "POST",
-      body: { userId: "65f48b8d1eeb98db5a9467b1", perId: id },
+      body: { userId: list2.userId, perId: id },
     };
 
-    const result = await dispatch(httpAction(addPersonalityData));
-    console.log(result);
+    await dispatch(httpAction(addPersonalityData));
   };
 
   useEffect(() => {
@@ -83,13 +82,12 @@ const SelectedUsers = () => {
       body: { perId: id },
     };
 
-   await dispatch(httpAction(deleteData));
-   
+    await dispatch(httpAction(deleteData));
 
     setDragged((prevDrag) => {
       return prevDrag.filter((item) => item.id !== id);
     });
-    dispatch(dragActions.setOndeleteItem(id))
+    dispatch(dragActions.setOndeleteItem(id));
   };
 
   return (

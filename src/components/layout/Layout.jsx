@@ -41,14 +41,13 @@ const dragEnd = (result)=>{
 
 
     
- if(source.droppableId ==='droppable'){
+ if(source.droppableId ==='droppable' && destination.droppableId === 'someid'){
   const formatedId = draggableId.split('-')[1]
   dispatch(dragActions.setItemId(formatedId))
  }
 
 
-if(destination.droppableId ==='tenetArray'){
- 
+if( source.droppableId ==='tenets' && destination.droppableId ==='tenetArray'){
   const formatedId = draggableId.split('-')[1]
   dispatch(tenetActions.setId(formatedId))
 }

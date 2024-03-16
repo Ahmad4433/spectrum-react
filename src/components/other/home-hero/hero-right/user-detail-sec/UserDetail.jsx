@@ -73,7 +73,7 @@ const UserDetail = () => {
       return prevItems.filter((item) => item.id !== id);
     });
 
-      
+    
   };
 
   return (
@@ -100,20 +100,25 @@ const UserDetail = () => {
             {...provided.droppableProps}
           >
             {items &&
-              items.map((ten, index) => {
-                return (
-                  <div className={style.tenet} key={index}>
-                    <img src={ten.image} className={style.telImage} />
-                    <p>{ten.title}</p>
+              items.slice().reverse().map((ten, index) => {
 
-                    <span>
-                      <IoIosRemoveCircleOutline
-                        onClick={() => deleteTeneHandler(ten.id)}
-                        className={style.removeIcon}
-                      />
-                    </span>
-                  </div>
-                );
+           
+                  return (
+                    <div className={style.tenet} key={index}>
+                      <img src={ten.image} className={style.telImage} />
+                      <p>{ten.title}</p>
+  
+                      <span>
+                        <IoIosRemoveCircleOutline
+                          onClick={() => deleteTeneHandler(ten.id)}
+                          className={style.removeIcon}
+                        />
+                      </span>
+                    </div>
+                  );
+               
+
+             
               })}
             {provided.placeholder}
           </div>

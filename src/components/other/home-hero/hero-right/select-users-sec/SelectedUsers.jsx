@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import httpAction from "../../../../../store/action/httpAction";
 import { dragActions } from "../../../../../store/slices/drag-slice";
 import { Droppable } from "react-beautiful-dnd";
+import { IoIosRemoveCircleOutline } from "react-icons/io";
 
-import { MdOutlineDeleteOutline } from "react-icons/md";
 
 const SelectedUsers = () => {
   const [data, setData] = useState();
@@ -88,6 +88,7 @@ const SelectedUsers = () => {
       return prevDrag.filter((item) => item.id !== id);
     });
     dispatch(dragActions.setOndeleteItem(id));
+   
   };
 
   return (
@@ -106,7 +107,7 @@ const SelectedUsers = () => {
                   <div key={index} className={style.uDetail}>
                     <span className={style.delete}>
                       {
-                        <MdOutlineDeleteOutline
+                        <IoIosRemoveCircleOutline
                           onClick={() => deletePerHandler(li.id)}
                           className={style.deleteIcon}
                         />

@@ -99,11 +99,9 @@
 
 .deleteIcon{
   font-size: 1.8rem;
-  color: brown;
+  color: #979797;
 
-  &:hover{
-    color: red;
-  }
+
 }
 @media (max-width: 756px) {
   .main {

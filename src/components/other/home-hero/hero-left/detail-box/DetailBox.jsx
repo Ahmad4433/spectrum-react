@@ -69,7 +69,7 @@ const DetailBox = () => {
         apply the various leadership styles.
       </p>
 
-      <Droppable id="tenets">
+      <Droppable droppableId="tenets">
         {(provided) => (
           <div ref={provided.innerRef} {...provided.droppableProps}>
             <div className={style.list}>

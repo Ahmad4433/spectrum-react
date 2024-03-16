@@ -9,10 +9,10 @@ addUserPersonality:`${baseUrl}user/personality/add`,
 userPersonalityList:`${baseUrl}user/personality/list`,
 userTotalPersonalities:`${baseUrl}user/total/personalities`,
 deleteUserPersonality:`${baseUrl}user/personality/delete`,
-getUserTenetsList:`${local}user/tenet/list`,
-addUserTenet:`${local}user/add/tenet`,
-getUserTotalTenets:`${local}user/total/tenets`,
-deleteUserTenet:`${local}user/delete/tenet`
+getUserTenetsList:`${baseUrl}user/tenet/list`,
+addUserTenet:`${baseUrl}user/add/tenet`,
+getUserTotalTenets:`${baseUrl}user/total/tenets`,
+deleteUserTenet:`${baseUrl}user/delete/tenet`
 
 
 

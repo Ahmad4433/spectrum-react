@@ -3,10 +3,11 @@
   background-color: var(--bodyBgClr2);
   /* padding: 2rem 8rem; */
   padding: 1rem;
-  
+
   min-height: 400px;
   border-radius: 8px;
   border: 1px dashed #ccc;
+
 }
 
 .banner {
@@ -15,6 +16,7 @@
   background-color: var(--pBgClr);
   width: 100%;
   max-width: 100%;
+
 }
 
 .banner p {
@@ -31,6 +33,7 @@
   gap: 1rem;
   justify-content: space-between;
   margin-top: 2rem;
+
 
   
 }

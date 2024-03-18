@@ -43,7 +43,13 @@
   border-radius: 10px;
   width: calc(30% - 1rem);
   cursor: pointer;
+ &:hover{
+  transform: scale(1.06);
+  transition: transform 0.2s;
+  border-style: dashed;
+  border-color: #252525;
   
+ } 
 }
 
 .detail {

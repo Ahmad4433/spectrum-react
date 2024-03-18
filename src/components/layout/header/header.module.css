@@ -76,6 +76,22 @@
   display: none;
 }
 
+.mobileHeaderHide{
+    display: none;
+}
+
+/* .searchMobile{
+    display: none;
+}
+
+.navigationsMobile{
+    display: none;
+}
+
+.searchParent{
+    display: none;
+} */
+
 @media (max-width: 756px) {
   .navigations {
     display: none;
@@ -154,6 +170,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
+
    
   }
 
@@ -167,7 +184,8 @@
     margin-top: 2rem;
     border-radius:8px;
     border: 1px solid #858585;
-  }
+ 
+}
   .searchBarMobile {
     width: 100%;
     padding: 0.8rem 0;
@@ -180,5 +198,6 @@
 
   .searchParent{
     padding: 1rem;
-  }
+   
+}
 }

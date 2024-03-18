@@ -7,6 +7,7 @@ import apis from "../../../store/utils/apis";
 
 const HomeHero2 = () => {
   const [data, setData] = useState();
+  const [pero,setPerso] = useState([])
 
   const dispatch = useDispatch();
   const itemId = useSelector((state) => state.drag.itemId);
@@ -28,9 +29,26 @@ const HomeHero2 = () => {
     setData(result?.list);
   };
 
+
   useEffect(() => {
     getPersonalities();
   }, [onDeleteItemId]);
+
+
+// const getAllPersonalities = async()=>{
+
+//   const getAPeroData = {
+//     url:list2.getPersonalities
+//   }
+
+//   const result = await dispatch(httpAction(getAPeroData))
+// console.log(result)
+// }
+
+//   useEffect(()=>{
+//     getAllPersonalities()
+
+//   },[])
 
   useEffect(() => {
     if (itemId && data.length > 8) {

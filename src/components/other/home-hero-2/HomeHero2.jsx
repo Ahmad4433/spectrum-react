@@ -32,31 +32,20 @@ const HomeHero2 = () => {
 
   useEffect(() => {
     getPersonalities();
-  }, [onDeleteItemId]);
+  }, [onDeleteItemId,itemId]);
 
 
-// const getAllPersonalities = async()=>{
 
-//   const getAPeroData = {
-//     url:list2.getPersonalities
-//   }
 
-//   const result = await dispatch(httpAction(getAPeroData))
-// console.log(result)
-// }
-
-//   useEffect(()=>{
-//     getAllPersonalities()
-
-//   },[])
-
-  useEffect(() => {
-    if (itemId && data.length > 8) {
-      setData((prevData) => {
-        return prevData.filter((data) => data.id !== itemId);
-      });
-    }
-  }, [itemId]);
+  // useEffect(() => {
+  //   if (itemId && data.length > 8) {
+  //     const newData = [...data]
+  //     newData.splice(sourceIndex,1)
+  
+    
+  //     setData(newData)
+  //   }
+  // }, [itemId]);
 
   // useEffect(() => {
   //   if (sourceIndex !== null && destIndex !== null) {

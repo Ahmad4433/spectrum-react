@@ -1,6 +1,6 @@
 .main {
   /* background-color: var(--bodyBgClr1); */
-    background-color:black;
+  background-color: black;
 }
 
 .header {
@@ -11,95 +11,174 @@
   border-bottom: 1px solid var(--borderClr);
 }
 
-.navMain{
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+.navMain {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
-.logo{
+.logo {
+  width: 160px;
+  cursor: pointer;
+  object-fit: contain;
+}
 
-    width: 160px;
+.navItem {
+  text-decoration: none;
+  color: var(--textCls);
+  font-weight: 500;
+  margin: 0 1rem;
+  letter-spacing: 0.4px;
+}
+
+.navItem:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  transition: text-decoration 0.2s;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  /* background-color: var(--borderClr); */
+  background-color: inherit;
+  padding-left: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid var(--textCls);
+}
+
+.sIcon {
+  color: var(--textCls);
+  font-size: 1.4rem;
+  &:hover {
     cursor: pointer;
-    object-fit: contain;
-  
+  }
 }
 
-.navItem{
-    text-decoration: none;
-    color: var(--textCls);
-    font-weight: 500;
-    margin: 0 1rem;
-    letter-spacing: 0.4px;
+.searchBar {
+  outline: none;
+  border: none;
+  padding: 1rem 0.4rem;
+  border-radius: 8px;
+  background-color: inherit;
+  color: var(--textCls);
 }
 
-.navItem:hover{
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    transition: text-decoration 0.2s;
+.searchBar::placeholder {
+  color: var(--textCls);
 }
 
-.search{
+.menu {
+  display: none;
+}
 
+.mobileHeader {
+  display: none;
+}
+
+@media (max-width: 756px) {
+  .navigations {
+    display: none;
+  }
+  .header,
+  .navMain {
+    padding: 0;
+    margin: 0;
+  }
+  .header {
+    padding: 0.8rem;
+  }
+
+  .search {
+    padding: 0;
+    margin: 0;
+    padding: 0 0.2rem;
+    display: none;
+    /* background-color: red; */
+  }
+  .searchBar {
+    padding: 0;
+    margin: 0;
+    padding: 0.4rem;
+  }
+
+  .logo {
+    width: 25%;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .menuIcon {
+    color: white;
+    font-size: 1.8rem;
+  }
+
+  .mobileHeader {
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.923);
+    display: block;
+    inset: 0;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .mobileHeaderHide {
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.923);
+    display: block;
+    inset: 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .close {
+    text-align: right;
+    padding: 0.8rem 1.4rem;
+    border-bottom: 1px solid #676767;
+    margin-bottom: 1rem;
+  }
+
+  .closeIcon {
+    color: white;
+    font-size: 1.8rem;
+  }
+
+  .navigationsMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+   
+  }
+
+  .searchMobile {
+    width: 100%;
+    padding: 0 1rem;
     display: flex;
     align-items: center;
-    /* background-color: var(--borderClr); */
+    gap: 1rem;
+    background-color: black;
+    margin-top: 2rem;
+    border-radius:8px;
+    border: 1px solid #858585;
+  }
+  .searchBarMobile {
+    width: 100%;
+    padding: 0.8rem 0;
     background-color: inherit;
-    padding-left: 0.6rem;
-    border-radius: 10px;
-    border: 1px solid var(--textCls);
-}
-
-.sIcon{
-    color: var(--textCls);
-    font-size: 1.4rem;
-    &:hover{
-        cursor: pointer;
-    }
-}
-
-
-.searchBar{
     outline: none;
     border: none;
-    padding: 1rem 0.4rem;
-    border-radius: 8px;
-    background-color: inherit;
-    color: var(--textCls);
-}
+    color: white;
+  
+  }
 
-.searchBar::placeholder{
-    color: var(--textCls);
-}
-
-@media(max-width:756px){
-    .navigations{
-        display: none;
-    }
-    .header,.navMain{
-        padding: 0;
-        margin: 0;
-    }
-.header{
-    padding: 0.8rem;
-}
-
-
-
-    .search{
-        padding: 0;
-        margin: 0;
-        padding: 0 0.2rem;
-        /* display: none; */
-     
-    }
-    .searchBar{
-        padding: 0;
-        margin: 0;
-        padding: 0.4rem;
-    }
-
-    .logo{
-        width: 25%;
-    }
+  .searchParent{
+    padding: 1rem;
+  }
 }

@@ -26,6 +26,7 @@
   margin: 2rem 0;
   /* justify-content: center; */
 /* justify-content: space-between; */
+
 }
 
 .img {
@@ -112,4 +113,13 @@ background-color: lightblue;
     width: 60px;
     
   }
+  /* .list{
+    justify-content: center;
+  } */
+
+.personalities{
+
+  padding-left: 1rem;
+}
+
 }

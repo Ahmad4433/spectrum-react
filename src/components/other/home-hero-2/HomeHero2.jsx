@@ -76,7 +76,8 @@ const HomeHero2 = () => {
           </p>
         </div>
 
-        <Droppable droppableId="droppable">
+    <div className={style.personalities} >
+    <Droppable droppableId="droppable">
           {(provided) => (
             <div
               className={style.list}
@@ -112,6 +113,9 @@ const HomeHero2 = () => {
             </div>
           )}
         </Droppable>
+
+
+    </div>
       </div>
     </div>
   );

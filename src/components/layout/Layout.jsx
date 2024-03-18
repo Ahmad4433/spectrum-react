@@ -55,9 +55,17 @@ if( source.droppableId ==='tenets' && destination.droppableId ==='tenetArray'){
 }
 
 
+const ondragStart = ()=>{
+  if(window.navigator.vibrate){
+    window.navigator.vibrate(100)
+  }
+
+}
+
+
   return (
 
-    <DragDropContext onDragEnd={dragEnd} >
+    <DragDropContext onDragStart={ondragStart} onDragEnd={dragEnd} >
     <div className={style.main} >
       
       {isLoading &&  <Loading/>}

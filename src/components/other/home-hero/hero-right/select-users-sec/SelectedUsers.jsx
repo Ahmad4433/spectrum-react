@@ -8,7 +8,6 @@ import { dragActions } from "../../../../../store/slices/drag-slice";
 import { Droppable } from "react-beautiful-dnd";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 
-
 const SelectedUsers = () => {
   const [data, setData] = useState();
   const [selected, setSelected] = useState();
@@ -36,7 +35,7 @@ const SelectedUsers = () => {
   const getUserPersoData = {
     url: list2.userPersonalityList,
     method: "POST",
-    body: { userId: list2.userId},
+    body: { userId: list2.userId },
   };
 
   const getUserPerso = async () => {
@@ -88,7 +87,6 @@ const SelectedUsers = () => {
       return prevDrag.filter((item) => item.id !== id);
     });
     dispatch(dragActions.setOndeleteItem(id));
-   
   };
 
   return (

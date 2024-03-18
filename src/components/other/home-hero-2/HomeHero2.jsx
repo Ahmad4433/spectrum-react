@@ -105,6 +105,8 @@ const HomeHero2 = () => {
                         {...provided.dragHandleProps}
                         className={style.uDetail}
                       >
+                    
+
                         <img
                           src={li.image}
                           className={style.img}

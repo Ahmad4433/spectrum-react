@@ -4,7 +4,7 @@ import style from "./detailBox.module.css";
 import apis from "../../../../../store/utils/apis";
 import { useDispatch, useSelector } from "react-redux";
 import httpAction from "../../../../../store/action/httpAction";
-
+import {tenetActions} from '../../../../../store/slices/tenets-sllice'
 import { Draggable, Droppable } from "react-beautiful-dnd";
 
 const DetailBox = () => {
@@ -24,10 +24,18 @@ const DetailBox = () => {
   const geteTenets = async () => {
     const result = await dispatch(httpAction(data2));
     setData(result?.list);
+    
+    
   };
   useEffect(() => {
     geteTenets();
   }, []);
+
+useEffect(()=>{
+if(data && data.length>=1){
+  dispatch(tenetActions.setSelected(true))
+}
+},[data])
 
   useEffect(() => {
     if (itemId) {

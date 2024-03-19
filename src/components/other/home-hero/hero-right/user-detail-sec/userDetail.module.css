@@ -2,19 +2,16 @@
   display: flex;
   gap: 2rem;
   margin-top: 2rem;
-
 }
 
-@media(min-width:756px){
-  .left{
+@media (min-width: 756px) {
+  .left {
     width: 35%;
-  
   }
 }
 
 .viewSec {
   position: relative;
-
 }
 
 .topBar {
@@ -34,22 +31,25 @@
   padding: 1.4rem;
   position: absolute;
   inset: 0;
+  
 }
 .portateBg {
   background-color: var(--imgBg);
-  height: 200px;
-  width: 180px;
+  height: 270px;
+  width: 220px;
   border-radius: 12px;
+  
 }
 
 .imageBg {
-  height: 240px;
-  width: 220px;
+  height: 310px;
+  width: 260px;
   padding: 1.4rem;
   position: absolute;
   inset: 0;
   top: -0.6rem;
   left: -0.6rem;
+
 }
 
 .img {
@@ -61,39 +61,27 @@
 }
 
 
-/* .title{
-  color: green;
-  font-weight: 600;
-} */
 
-@media(min-width:756px){
-
-    .tenets::-webkit-scrollbar{
-      display: none;
-    }
+@media (min-width: 756px) {
+  .tenets::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .tenets {
-
-    flex: 1;
-    display: flex;
-    /* align-items: flex-end; */
-    /* justify-content: center; */
-    flex-direction: column;
-    padding-right: 4rem;
-    /* max-height: 280px; */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-right: 4rem;
   overflow-y: scroll;
- flex: 1;
+  flex: 1;
   min-height: 280px;
- border: 1px solid #ccc;
- padding: 1rem;
- margin-bottom: 1rem;
- border-radius: 12px;
- margin-right: 1rem;
- 
-
-
-  }
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
 
 /* .tenets button {
   border: none;
@@ -111,8 +99,7 @@
   }
 } */
 
-.tenet{
-  
+.tenet {
   display: flex;
   justify-content: space-between;
   border: 1px solid lightgreen;
@@ -121,29 +108,25 @@
   align-items: center;
   margin-bottom: 1rem;
 
- /* width: 300px; */
- width: 100%;
- cursor: pointer;
- &:hover{
-  border-color: green;
-  transform: scale(1.04);
-  transition: transform 0.4s ease;
- }
-
- 
+  /* width: 300px; */
+  width: 100%;
+  cursor: pointer;
+  &:hover {
+    border-color: green;
+    transform: scale(1.04);
+    transition: transform 0.4s ease;
+  }
 }
 
-.leaderTitle{
+.leaderTitle {
   text-align: center;
   width: 100%;
   margin-bottom: 1rem;
   color: green;
   font-weight: 600;
-
-
 }
 
-.tenetDummy{
+.tenetDummy {
   width: 100%;
   border: 1px dashed #ccc;
   padding: 1.5rem;
@@ -152,27 +135,26 @@
   text-align: center;
   font-style: italic;
   color: #ccc;
- 
+
   margin-bottom: 1rem;
 }
-.removeIcon{
+.removeIcon {
   font-size: 2rem;
   color: #7e7e7e;
   cursor: pointer;
   opacity: 0;
 }
 
-.tenet:hover .removeIcon{
+.tenet:hover .removeIcon {
   opacity: 1;
   transition: opacity 0.4s;
 }
 
-.telImage{
+.telImage {
   width: 32px;
   display: block;
   max-width: 100%;
   object-fit: contain;
-
 }
 
 @media (max-width: 756px) {
@@ -209,8 +191,8 @@
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 24%;
-    left: 32%;
+    top: 16%;
+    left: 27%;
     transform: translate(-50%, -50%);
   }
 
@@ -228,7 +210,6 @@
     transform: translate(-50%, -50%);
   }
 
-
   .tenets {
     padding: 0;
     margin: 0;
@@ -236,18 +217,17 @@
     display: block;
     padding: 1rem;
 
-margin: 1rem 0;
-   
+    margin: 1rem 0;
   }
-  .tenets button{
+  .tenets button {
     width: 100%;
     padding: 1rem 0;
     border-radius: 6px;
   }
-  .tenet{
+  .tenet {
     margin: 1rem auto;
   }
-  .tenetDummy{
+  .tenetDummy {
     margin: 0 auto;
     margin-bottom: 1rem;
   }

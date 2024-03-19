@@ -65,17 +65,14 @@ const HomeHero2 = () => {
         <div className={style.banner}>
           <p>
             <h4 className={style.title}>
-              It is a long established fact that a reader will be distracted
+              The Full Spectrum Leadership Framework encompasses fourteen styles
+              of leadership
             </h4>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English. Many desktop publishing
-            packages and web page editors now use Lorem Ipsum as their default
-            model text, and a search for 'lorem ipsum' will uncover many web
-            sites still in their infancy. Various versions have evolved over the
-            year
+            each tailored to specific circumstances and challenges. These styles
+            allow leaders to adapt their approach to suit different situations.
+            Choose the 4 leadership styles that resonate with you right now in
+            your leadership journey and drag them over onto your personal
+            leadership board.
           </p>
         </div>
 
@@ -83,7 +80,7 @@ const HomeHero2 = () => {
           <Droppable droppableId="droppable">
             {(provided) => (
               <div
-              className={style.list}
+                className={style.list}
                 {...provided.droppableProps}
                 ref={provided.innerRef}
               >

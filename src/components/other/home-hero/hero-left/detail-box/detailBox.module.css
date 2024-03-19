@@ -35,6 +35,7 @@
 .dragTitle {
   color: #ccc;
   font-style: italic;
+  margin-bottom: 1rem;
 }
 
 /* .list {

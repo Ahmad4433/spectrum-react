@@ -12,6 +12,7 @@ const DetailBox = () => {
   const [newItems, setNewItems] = useState();
   const itemId = useSelector((state) => state.tenet.itemId);
   const onDeleteId = useSelector((state) => state.tenet.onDeleteId);
+  const isSelectedTene = useSelector(state=>state.tenet.isSelected)
 
   const dispatch = useDispatch();
   const list2 = apis();
@@ -86,11 +87,13 @@ const DetailBox = () => {
             {...provided.droppableProps}
           >
             <p className={style.dragTitle}>Drag Tenet from here</p>
+          {data && data.length ===3 &&   <span className={style.dragTitle} >You can choice only one Tenet</span>}
             <div className={style.list}>
               {data &&
                 data.map((li, index) => {
                   return (
                     <Draggable
+                       isDragDisabled={isSelectedTene} 
                       key={index}
                       index={index}
                       draggableId={`item-${li.id}`}

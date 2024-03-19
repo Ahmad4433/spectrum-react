@@ -7,7 +7,8 @@ const tenetSlice = createSlice({
     initialState:{
         itemId:null,
         item:null,
-        onDeleteId:null
+        onDeleteId:null,
+        isSelected:false
     },
     reducers:{
         setId(state,action){
@@ -18,7 +19,11 @@ const tenetSlice = createSlice({
         },
         setOndeleteId(state,action){
             state.onDeleteId = action.payload
+        },
+        setSelected(state,action){
+            state.isSelected = action.payload
         }
+
     }
 
 })

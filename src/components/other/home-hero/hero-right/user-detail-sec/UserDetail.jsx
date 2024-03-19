@@ -52,9 +52,16 @@ const UserDetail = () => {
     body: { tenId: itemId, userId: apiList.userId },
   };
   const addUserTen = async () => {
+    if( items && items.length >=1){
+      return
+    }
     await dispatch(httpAction(addUserTenetData));
+    dispatch(tenetActions.setSelected(true))
   };
   useEffect(() => {
+    if(items && items.length >=1){
+      return
+    }
     if (itemId) {
       addUserTen();
     }
@@ -68,6 +75,7 @@ const UserDetail = () => {
     };
     dispatch(tenetActions.setOndeleteId(id));
     await dispatch(httpAction(deleteTentData));
+    dispatch(tenetActions.setSelected(false))
 
     setItems((prevItems) => {
       return prevItems.filter((item) => item.id !== id);

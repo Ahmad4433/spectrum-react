@@ -4,7 +4,7 @@ import style from "./detailBox.module.css";
 import apis from "../../../../../store/utils/apis";
 import { useDispatch, useSelector } from "react-redux";
 import httpAction from "../../../../../store/action/httpAction";
-import {tenetActions} from '../../../../../store/slices/tenets-sllice'
+import { tenetActions } from "../../../../../store/slices/tenets-sllice";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 
 const DetailBox = () => {
@@ -12,7 +12,7 @@ const DetailBox = () => {
   const [newItems, setNewItems] = useState();
   const itemId = useSelector((state) => state.tenet.itemId);
   const onDeleteId = useSelector((state) => state.tenet.onDeleteId);
-  const isSelectedTene = useSelector(state=>state.tenet.isSelected)
+  const isSelectedTene = useSelector((state) => state.tenet.isSelected);
 
   const dispatch = useDispatch();
   const list2 = apis();
@@ -21,21 +21,21 @@ const DetailBox = () => {
     method: "POST",
     body: { userId: list2.userId },
   };
+  // get user tenets
   const geteTenets = async () => {
     const result = await dispatch(httpAction(data2));
     setData(result?.list);
-    
-    
   };
   useEffect(() => {
     geteTenets();
   }, []);
 
 useEffect(()=>{
-if(data && data.length>=1){
+if(data && data.length<=3){
   dispatch(tenetActions.setSelected(true))
 }
 },[data])
+
 
   useEffect(() => {
     if (itemId) {
@@ -53,7 +53,6 @@ if(data && data.length>=1){
 
     setNewItems(result?.list);
   };
-
   useEffect(() => {
     getAllTenets();
   }, []);
@@ -95,13 +94,17 @@ if(data && data.length>=1){
             {...provided.droppableProps}
           >
             <p className={style.dragTitle}>Drag Tenet from here</p>
-          {data && data.length ===3 &&   <span className={style.dragTitle} >You can choice only one Tenet</span>}
+            {data && data.length === 3 && (
+              <span className={style.dragTitle}>
+                You can choice only one Tenet
+              </span>
+            )}
             <div className={style.list}>
               {data &&
                 data.map((li, index) => {
                   return (
                     <Draggable
-                       isDragDisabled={isSelectedTene} 
+                      isDragDisabled={isSelectedTene}
                       key={index}
                       index={index}
                       draggableId={`item-${li.id}`}

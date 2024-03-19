@@ -64,7 +64,7 @@ const SelectedUsers = () => {
   };
 
   useEffect(() => {
-    if (dragged && dragged.length >= 6) {
+    if (dragged && dragged.length >= 4) {
       return;
     }
     if (itemsId) {

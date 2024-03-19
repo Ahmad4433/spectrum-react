@@ -97,6 +97,8 @@ const UserDetail = () => {
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
+            <p className={style.leaderTitle} >My Leadership Styles</p>
+
             {items &&
               items
                 .slice()
@@ -106,7 +108,7 @@ const UserDetail = () => {
                     <div>
                       <div className={style.tenet} key={index}>
                         <img src={ten.image} className={style.telImage} />
-                        <p>{ten.title}</p>
+                        <p className={style.title} >{ten.title}</p>
 
                         <span>
                           <IoIosRemoveCircleOutline

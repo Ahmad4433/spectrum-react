@@ -61,18 +61,31 @@ const DetailBox = () => {
   return (
     <div className={style.main}>
       <p className={style.box}>
-        The first step in creating your directive is to choose a core tenet that
-        resonates with your personal values and leadership philosophy. This
-        could be Emotional Intelligence, Ethical Decision-Making, Inclusivity
-        and Diversity, or Social Responsibility. This tenet will serve as the
-        foundation of your leadership style, influencing how you interpret and
-        apply the various leadership styles.
+        <p className={style.p1}>
+          The first step in creating your directive is to choose a core tenet
+          that resonates with your personal values and leadership philosophy.
+        </p>
+        <p className={style.p2}>
+          This could be Emotional Intelligence, Ethical Decision-Making,
+          Inclusivity and Diversity, or Social Responsibility. This tenet will
+          serve as the foundation of your leadership style, influencing how you
+          interpret and apply the various leadership styles.
+        </p>
+        <p className={style.p3}>
+          Hover over the 4 tenets below and choose one which resonates with
+          there you are in your personal leadership journey then drag your
+          chosen tenet into your Leadership board.
+        </p>
       </p>
 
       <Droppable droppableId="tenets">
         {(provided) => (
-          <div className={style.listParent} ref={provided.innerRef} {...provided.droppableProps}>
-            <p className={style.dragTitle} >Drag Tenet from here</p>
+          <div
+            className={style.listParent}
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+          >
+            <p className={style.dragTitle}>Drag Tenet from here</p>
             <div className={style.list}>
               {data &&
                 data.map((li, index) => {
@@ -96,13 +109,12 @@ const DetailBox = () => {
                             alt={index}
                           />
                           <span className={style.name}>{li.title}</span>
-                          {/* <span className={style.detail}>{li.detail}</span> */}
+                          <span className={style.detail}>{li.detail}</span>
                         </div>
                       )}
                     </Draggable>
                   );
                 })}
-                
             </div>
           </div>
         )}

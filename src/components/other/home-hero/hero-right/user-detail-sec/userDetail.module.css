@@ -60,6 +60,12 @@
   border-radius: 12px;
 }
 
+
+/* .title{
+  color: green;
+  font-weight: 600;
+} */
+
 @media(min-width:756px){
 
     .tenets::-webkit-scrollbar{
@@ -72,7 +78,7 @@
     flex: 1;
     display: flex;
     /* align-items: flex-end; */
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
     padding-right: 4rem;
     /* max-height: 280px; */
@@ -109,19 +115,31 @@
   
   display: flex;
   justify-content: space-between;
-  border: 1px solid #ccc;
+  border: 1px solid lightgreen;
   padding: 1rem;
   border-radius: 12px;
   align-items: center;
   margin-bottom: 1rem;
+
  /* width: 300px; */
  width: 100%;
  cursor: pointer;
  &:hover{
-  border-color: rgb(52, 167, 206);
+  border-color: green;
   transform: scale(1.04);
   transition: transform 0.4s ease;
  }
+
+ 
+}
+
+.leaderTitle{
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  color: green;
+  font-weight: 600;
+
 
 }
 

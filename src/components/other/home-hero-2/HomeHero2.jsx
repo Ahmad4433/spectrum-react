@@ -4,10 +4,11 @@ import { Droppable, Draggable } from "react-beautiful-dnd";
 import httpAction from "../../../store/action/httpAction";
 import { useDispatch, useSelector } from "react-redux";
 import apis from "../../../store/utils/apis";
+import SinglePersonality from "./single-personality/SinglePersonality";
 
 const HomeHero2 = () => {
   const [data, setData] = useState();
-  const [pero,setPerso] = useState([])
+  const [pero, setPerso] = useState([]);
 
   const dispatch = useDispatch();
   const itemId = useSelector((state) => state.drag.itemId);
@@ -29,20 +30,15 @@ const HomeHero2 = () => {
     setData(result?.list);
   };
 
-
   useEffect(() => {
     getPersonalities();
-  }, [onDeleteItemId,itemId]);
-
-
-
+  }, [onDeleteItemId, itemId]);
 
   // useEffect(() => {
   //   if (itemId && data.length > 8) {
   //     const newData = [...data]
   //     newData.splice(sourceIndex,1)
-  
-    
+
   //     setData(newData)
   //   }
   // }, [itemId]);
@@ -83,48 +79,42 @@ const HomeHero2 = () => {
           </p>
         </div>
 
-    <div className={style.personalities} >
-    <Droppable droppableId="droppable">
-          {(provided) => (
-            <div
+        <div className={style.personalities}>
+          <Droppable droppableId="droppable">
+            {(provided) => (
+              <div
               className={style.list}
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-            >
-              {data &&
-                data.map((li, index) => (
-                  <Draggable
-                    key={index}
-                    draggableId={`item-${li.id}`}
-                    index={index}
-                  >
-                    {(provided) => (
-                      <div
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                        className={style.uDetail}
-                      >
-                    
-
-                        <img
-                          src={li.image}
-                          className={style.img}
-                          alt={`item-${index}`}
-                        />
-                        <span className={style.name}>{li.title}</span>
-                        <span className={style.detail}>{li.detail}</span>
-                      </div>
-                    )}
-                  </Draggable>
-                ))}
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
-
-
-    </div>
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+              >
+                {data &&
+                  data.map((li, index) => (
+                    <Draggable
+                      key={index}
+                      draggableId={`item-${li.id}`}
+                      index={index}
+                    >
+                      {(provided) => (
+                        <div
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                          className={style.child}
+                        >
+                          <SinglePersonality
+                            title={li.title}
+                            img={li.image}
+                            detail={li.detail}
+                          />
+                        </div>
+                      )}
+                    </Draggable>
+                  ))}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </div>
       </div>
     </div>
   );

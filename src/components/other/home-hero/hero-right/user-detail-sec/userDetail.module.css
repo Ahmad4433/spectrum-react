@@ -1,66 +1,3 @@
-.main {
-  display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-@media (min-width: 756px) {
-  .left {
-    width: 35%;
-  }
-}
-
-.viewSec {
-  position: relative;
-}
-
-.topBar {
-  width: 80px;
-  background-color: var(--imgBg);
-  height: 4px;
-  display: block;
-}
-.leftBar {
-  height: 110px;
-  width: 4px;
-  background-color: var(--imgBg);
-  display: block;
-}
-
-.potrateParent {
-  padding: 1.4rem;
-  position: absolute;
-  inset: 0;
-  
-}
-.portateBg {
-  background-color: var(--imgBg);
-  height: 270px;
-  width: 220px;
-  border-radius: 12px;
-  
-}
-
-.imageBg {
-  height: 310px;
-  width: 260px;
-  padding: 1.4rem;
-  position: absolute;
-  inset: 0;
-  top: -0.6rem;
-  left: -0.6rem;
-
-}
-
-.img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 12px;
-}
-
-
 
 @media (min-width: 756px) {
   .tenets::-webkit-scrollbar {
@@ -68,36 +5,19 @@
   }
 }
 
+
 .tenets {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  padding-right: 4rem;
-  overflow-y: scroll;
-  flex: 1;
-  min-height: 280px;
   border: 1px solid #ccc;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 12px;
-  margin-right: 1rem;
+  width: 100%;
+  /* margin: 1rem; */
+
+
 }
-
-/* .tenets button {
-  border: none;
-  outline: none;
-  background-color: var(--imgBg);
-  width: 200px;
-  margin-bottom: 1rem;
-  padding: 0.9rem;
-  border-radius: 12px;
-  background-color: inherit;
-
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  &:hover {
-    cursor: pointer;
-  }
-} */
 
 .tenet {
   display: flex;

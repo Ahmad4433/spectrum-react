@@ -11,7 +11,7 @@ import apis from "../../../../../store/utils/apis";
 import httpAction from "../../../../../store/action/httpAction";
 import { tenetActions } from "../../../../../store/slices/tenets-sllice";
 
-const UserDetail = () => {
+const UserDetail = ({ isProfile, isCenter }) => {
   const [items, setItems] = useState([]);
   const dispatch = useDispatch();
   const itemId = useSelector((state) => state.tenet.itemId);
@@ -52,15 +52,15 @@ const UserDetail = () => {
     body: { tenId: itemId, userId: apiList.userId },
   };
   const addUserTen = async () => {
-    if( items && items.length >=1){
-      return
+    if (items && items.length >= 1) {
+      return;
     }
     await dispatch(httpAction(addUserTenetData));
-    dispatch(tenetActions.setSelected(true))
+    dispatch(tenetActions.setSelected(true));
   };
   useEffect(() => {
-    if(items && items.length >=1){
-      return
+    if (items && items.length >= 1) {
+      return;
     }
     if (itemId) {
       addUserTen();
@@ -75,7 +75,7 @@ const UserDetail = () => {
     };
     dispatch(tenetActions.setOndeleteId(id));
     await dispatch(httpAction(deleteTentData));
-    dispatch(tenetActions.setSelected(false))
+    dispatch(tenetActions.setSelected(false));
 
     setItems((prevItems) => {
       return prevItems.filter((item) => item.id !== id);
@@ -84,20 +84,6 @@ const UserDetail = () => {
 
   return (
     <div className={style.main}>
-      <div className={style.left} >
-        <div className={style.viewSec}>
-          <div className={style.bars}>
-            <span className={style.topBar}></span>
-            <span className={style.leftBar}></span>
-          </div>
-          <div className={style.potrateParent}>
-            <div className={style.portateBg}></div>
-          </div>
-          <div className={style.imageBg}>
-            <img src={potrate} className={style.img} alt="selected" />
-          </div>
-        </div>
-      </div>
       <Droppable droppableId="tenetArray">
         {(provided) => (
           <div
@@ -105,7 +91,7 @@ const UserDetail = () => {
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
-            <p className={style.leaderTitle} >My Leadership Styles</p>
+            <p className={style.leaderTitle}>My Leadership Styles</p>
 
             {items &&
               items
@@ -116,7 +102,7 @@ const UserDetail = () => {
                     <div>
                       <div className={style.tenet} key={index}>
                         <img src={ten.image} className={style.telImage} />
-                        <p className={style.title} >{ten.title}</p>
+                        <p className={style.title}>{ten.title}</p>
 
                         <span>
                           <IoIosRemoveCircleOutline
@@ -129,7 +115,9 @@ const UserDetail = () => {
                   );
                 })}
             {provided.placeholder}
-            <div className={style.tenetDummy} >Drop Here</div>
+            {items?.length === 0 && (
+              <div className={style.tenetDummy}>Drop Here</div>
+            )}
           </div>
         )}
       </Droppable>

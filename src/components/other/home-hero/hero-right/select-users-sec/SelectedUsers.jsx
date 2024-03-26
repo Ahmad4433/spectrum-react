@@ -113,7 +113,7 @@ const SelectedUsers = () => {
                     </span>
                     <img src={li?.image} className={style.img} alt={index} />
                     <span className={style.name}>{li?.title}</span>
-                    <span className={style.detail}>{li?.detail}</span>
+                    {/* <span className={style.detail}>{li?.detail}</span> */}
                   </div>
                 );
               })}

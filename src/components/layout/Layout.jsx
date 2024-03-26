@@ -48,7 +48,7 @@ const Layout = () => {
     }
   };
 
-  const ondragStart = () => {
+  const ondragStart = (event) => {
     if (window.navigator.vibrate) {
       window.navigator.vibrate(100);
     }

@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import httpAction from "../../../../../store/action/httpAction";
 import { tenetActions } from "../../../../../store/slices/tenets-sllice";
 import { Draggable, Droppable } from "react-beautiful-dnd";
+import potrate from "../../../../../assts/potrate.png";
+import potrateBg from "../../../../../assts/potratebg.png";
+import UserDetail from "../../hero-right/user-detail-sec/UserDetail";
 
 const DetailBox = () => {
   const [data, setData] = useState();
@@ -30,12 +33,11 @@ const DetailBox = () => {
     geteTenets();
   }, []);
 
-useEffect(()=>{
-if(data && data.length<=3){
-  dispatch(tenetActions.setSelected(true))
-}
-},[data])
-
+  useEffect(() => {
+    if (data && data.length <= 3) {
+      dispatch(tenetActions.setSelected(true));
+    }
+  }, [data]);
 
   useEffect(() => {
     if (itemId) {
@@ -68,24 +70,6 @@ if(data && data.length<=3){
 
   return (
     <div className={style.main}>
-      <p className={style.box}>
-        <p className={style.p1}>
-          The first step in creating your directive is to choose a core tenet
-          that resonates with your personal values and leadership philosophy.
-        </p>
-        <p className={style.p2}>
-          This could be Emotional Intelligence, Ethical Decision-Making,
-          Inclusivity and Diversity, or Social Responsibility. This tenet will
-          serve as the foundation of your leadership style, influencing how you
-          interpret and apply the various leadership styles.
-        </p>
-        <p className={style.p3}>
-          Hover over the 4 tenets below and choose one which resonates with
-          there you are in your personal leadership journey then drag your
-          chosen tenet into your Leadership board.
-        </p>
-      </p>
-
       <Droppable droppableId="tenets">
         {(provided) => (
           <div
@@ -133,6 +117,12 @@ if(data && data.length<=3){
           </div>
         )}
       </Droppable>
+
+      <div className={style.left}>
+        <div className={style.viewSec}>
+          <img src={potrate} className={style.userImg} alt="selected" />
+        </div>
+      </div>
     </div>
   );
 };

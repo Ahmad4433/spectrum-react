@@ -1,10 +1,8 @@
-
 @media (min-width: 756px) {
   .tenets::-webkit-scrollbar {
     display: none;
   }
 }
-
 
 .tenets {
   display: flex;
@@ -15,8 +13,13 @@
   border-radius: 12px;
   width: 100%;
   /* margin: 1rem; */
+}
 
-
+.imaseSec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .tenet {
@@ -28,7 +31,10 @@
   align-items: center;
   margin-bottom: 1rem;
 
+  flex-direction: column;
+  align-items: flex-start;
   /* width: 300px; */
+  gap: 0.6rem;
   width: 100%;
   cursor: pointer;
   &:hover {

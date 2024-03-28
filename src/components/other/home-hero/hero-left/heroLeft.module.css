@@ -4,12 +4,19 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-
 }
 
-@media(max-width:756px){
-  .main{
+.right {
+  flex: 1;
+}
+
+@media (max-width: 756px) {
+  .main {
     flex-direction: column;
     padding: 1rem;
+    
+
   }
+
+ 
 }

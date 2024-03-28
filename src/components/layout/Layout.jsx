@@ -46,6 +46,7 @@ const Layout = () => {
       const formatedId = draggableId.split("-")[1];
       dispatch(tenetActions.setId(formatedId));
     }
+    // window.location.reload();
   };
 
   const ondragStart = (event) => {

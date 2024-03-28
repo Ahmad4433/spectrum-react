@@ -7,11 +7,14 @@ import httpAction from "../../../../../store/action/httpAction";
 import { dragActions } from "../../../../../store/slices/drag-slice";
 import { Droppable } from "react-beautiful-dnd";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
+import Loading from "../../../../ui/loading/Loading";
 
 const SelectedUsers = () => {
   const [data, setData] = useState();
   const [selected, setSelected] = useState();
   const [dragged, setDragged] = useState([]);
+
+  const isLoading = useSelector((state) => state.ui.loading);
 
   const dispatch = useDispatch();
 
@@ -60,7 +63,11 @@ const SelectedUsers = () => {
       body: { userId: list2.userId, perId: id },
     };
 
-    await dispatch(httpAction(addPersonalityData));
+    const result = await dispatch(httpAction(addPersonalityData));
+
+    if (result) {
+      window.location.reload();
+    }
   };
 
   useEffect(() => {
@@ -87,6 +94,7 @@ const SelectedUsers = () => {
       return prevDrag.filter((item) => item.id !== id);
     });
     dispatch(dragActions.setOndeleteItem(id));
+    window.location.reload();
   };
 
   return (
@@ -113,11 +121,15 @@ const SelectedUsers = () => {
                     </span>
                     <img src={li?.image} className={style.img} alt={index} />
                     <span className={style.name}>{li?.title}</span>
-                    {/* <span className={style.detail}>{li?.detail}</span> */}
+                    <span className={style.detail}>{li?.detail}</span>
                   </div>
                 );
               })}
           </div>
+
+          {dragged?.length === 0 && !isLoading && (
+            <div className={style.dummy}>Drop Style Here</div>
+          )}
         </div>
       )}
     </Droppable>

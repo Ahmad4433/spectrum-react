@@ -80,6 +80,8 @@ const UserDetail = ({ isProfile, isCenter }) => {
     setItems((prevItems) => {
       return prevItems.filter((item) => item.id !== id);
     });
+
+    window.location.reload();
   };
 
   return (
@@ -101,22 +103,24 @@ const UserDetail = ({ isProfile, isCenter }) => {
                   return (
                     <div>
                       <div className={style.tenet} key={index}>
-                        <img src={ten.image} className={style.telImage} />
+                        <div className={style.imaseSec}>
+                          <img src={ten.image} className={style.telImage} />
+                          <span>
+                            <IoIosRemoveCircleOutline
+                              onClick={() => deleteTeneHandler(ten.id)}
+                              className={style.removeIcon}
+                            />
+                          </span>
+                        </div>
                         <p className={style.title}>{ten.title}</p>
-
-                        <span>
-                          <IoIosRemoveCircleOutline
-                            onClick={() => deleteTeneHandler(ten.id)}
-                            className={style.removeIcon}
-                          />
-                        </span>
+                        <p>{ten.detail}</p>
                       </div>
                     </div>
                   );
                 })}
             {provided.placeholder}
             {items?.length === 0 && (
-              <div className={style.tenetDummy}>Drop Here</div>
+              <div className={style.tenetDummy}>Drop Tenet Here</div>
             )}
           </div>
         )}

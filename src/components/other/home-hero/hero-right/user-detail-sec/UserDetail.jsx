@@ -55,8 +55,11 @@ const UserDetail = ({ isProfile, isCenter }) => {
     if (items && items.length >= 1) {
       return;
     }
-    await dispatch(httpAction(addUserTenetData));
+    const result = await dispatch(httpAction(addUserTenetData));
     dispatch(tenetActions.setSelected(true));
+    if (result) {
+      window.location.reload();
+    }
   };
   useEffect(() => {
     if (items && items.length >= 1) {
